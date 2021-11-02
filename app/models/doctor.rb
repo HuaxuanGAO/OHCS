@@ -5,3 +5,10 @@ class Doctor < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :username, uniqueness: true, presence: true
 end
+
+# class Doctor::ParameterSanitizer < Devise::ParameterSanitizer
+#   def initialize(*)
+#     super
+#     permit(:sign_up, keys: [:username, :email, :last_name, :first_name, :gender])
+#   end
+# end
