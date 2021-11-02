@@ -7,6 +7,10 @@
     <%= @doctor.username %>
   </li>
   <li>
+    Email:
+    <%= @doctor.email %>
+  </li>
+  <li>
     Name:
     <%= @doctor.first_name + " " + @doctor.last_name %>
   </li>
@@ -19,3 +23,9 @@
     <%= @doctor.birthday.strftime("%B %d, %Y") %>
   </li>
 </ul>
+
+、<div class="row">
+  <%= link_to 'Edit Info', '/doctors/editinfo', :class => 'btn btn-primary col-2' %>
+  <%= link_to 'Change Password or Delete', '/doctors/edit', :class => 'btn btn-danger col-2' %>
+  <%= link_to 'Back to doctor list', '/doctors', :class => 'btn btn-primary col-2' %>
+</div>

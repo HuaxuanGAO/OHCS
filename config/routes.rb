@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/doctors/:id/profile', to: 'doctors#profile' 
   devise_for :patients
   get '/patients/:id/profile', to: 'patients#profile' 
+  get '/doctors', to: 'doctors#index' 
+  get '/doctors/editinfo', to: 'doctors#editinfo' 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root controller: :patients, action: :login
 end
