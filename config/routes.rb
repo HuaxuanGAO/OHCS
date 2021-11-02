@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/patients/:id/profile', to: 'patients#profile' 
   get '/doctors', to: 'doctors#index' 
   get '/doctors/editinfo', to: 'doctors#editinfo' 
+  put '/doctors/update', to: 'doctors#update' 
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root controller: :patients, action: :login
 end
