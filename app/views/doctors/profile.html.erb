@@ -1,2 +1,21 @@
 <h1>Doctor Profile</h1>
 <a href="/dashboard">Rooms</a>
+
+<ul id="details">
+  <li>
+    Username:
+    <%= @doctor.username %>
+  </li>
+  <li>
+    Name:
+    <%= @doctor.first_name + " " + @doctor.last_name %>
+  </li>
+  <li>
+    Gender:
+    <%= @doctor.gender %>
+  </li>
+  <li>
+    Birthday:
+    <%= @doctor.birthday.strftime("%B %d, %Y") %>
+  </li>
+</ul>
