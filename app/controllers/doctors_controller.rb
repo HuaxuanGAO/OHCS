@@ -5,4 +5,13 @@ class DoctorsController < ApplicationController
             @doctor = current_doctor
         end
     end
+
+    def index
+        @doctors = Doctor.all
+    end
+    
+    def editinfo
+        @doctor = current_doctor
+    end
+
 end
