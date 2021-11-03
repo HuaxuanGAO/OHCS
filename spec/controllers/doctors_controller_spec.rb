@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative "../support/devise"
+require "../support/devise"
 require 'simplecov'
 SimpleCov.start 'rails'
 
