@@ -1,5 +1,7 @@
 import consumer from "./consumer"
 
+console.log("room channel js file loaded")
+
 consumer.subscriptions.create("RoomChannel", {
   connected() {
     console.log("connected");
@@ -11,7 +13,7 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    console.log("received");
+    console.log("received", data);
     // Called when there's incoming data on the websocket for this channel
   }
 });
@@ -19,13 +21,15 @@ consumer.subscriptions.create("RoomChannel", {
 $(function() {
   console.log("func");
   $('[data-channel-subscribe="room"]').each(function(index, element) {
-    var $element = $(element),
-        room_id = $element.data('room-id')
-        messageTemplate = $('[data-role="message-template"]');
+    var $element = $(element);
+    var room_id = $element.data('room-id');
+    var messageTemplate = $('[data-role="message-template"]');
+
+    console.log("room id: ", room_id);
 
     $element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000)        
 
-    App.cable.subscriptions.create(
+    consumer.subscriptions.create(
       {
         channel: "RoomChannel",
         room: room_id
@@ -41,5 +45,11 @@ $(function() {
         }
       }
     );
+  });
+});
+
+$(function() {
+  $('#new_message').on('ajax:success', function(a, b,c ) {
+    $(this).find('input[type="text"]').val('');
   });
 });

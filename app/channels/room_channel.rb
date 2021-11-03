@@ -1,6 +1,6 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    puts "subscribed"
+    puts "subscribed #{params}"
     room = Room.find params[:room]
     stream_for room
   end
