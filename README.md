@@ -15,6 +15,7 @@ Things you may want to cover:
 
 * Database creation
   * `rails db:migate`
+  * `redis-server`
 
 * Database initialization
   * `rails db:seed`
