@@ -7,7 +7,7 @@
   <% if current_patient %>
     <div class="dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="avatar" src="<%= gravatar_url(current_patient) %>">
+        <img class="avatar" src="<%= current_patient.gravatar_url %>">
         <%= current_patient.username %>
       </a>
 
@@ -21,7 +21,7 @@
     <% if current_doctor %>
     <div class="dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="avatar" src="<%= gravatar_url(current_doctor) %>">
+        <img class="avatar" src="<%= current_doctor.gravatar_url %>">
         <%= current_doctor.username %>
         </a>
 

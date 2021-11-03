@@ -6,7 +6,15 @@ Rails.application.routes.draw do
   devise_for :doctors
   get '/doctors/:id/profile', to: 'doctors#profile' 
   devise_for :patients
-  get '/patients/:id/profile', to: 'patients#profile' 
+  get '/patients/:id/profile', to: 'patients#profile'
+  get '/patients', to:'patients#index'
+  get '/patients/editinfo', to: 'patients#editinfo'
+  put '/patients/update', to: 'patients#update'
+  get '/doctors', to: 'doctors#index' 
+  get '/doctors/editinfo', to: 'doctors#editinfo' 
+  put '/doctors/update', to: 'doctors#update'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root controller: :patients, action: :login
+  
 end
