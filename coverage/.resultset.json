@@ -1,0 +1,356 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/doctor.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/patient.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/doctors_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/messages_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/patients_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/rooms_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/doctors_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/channels/room_channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/messages_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/patients_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/rooms_controller.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/message.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/room.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1635941274
+  }
+}

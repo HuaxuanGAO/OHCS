@@ -46,8 +46,6 @@ Given('I have login with the wrong credential') do
 end
 
 Given('I logout') do
-  # select "Logout", :from => "navbarDropdown"
-  # # click_button(test_patient[:username])
   click_button('Logout')
 end
 
