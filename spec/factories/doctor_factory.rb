@@ -1,7 +1,3 @@
-require 'rails_helper'
-require 'simplecov'
-SimpleCov.start 'rails'
-
 FactoryBot.define do
     factory :doctor do
       email {'ljcjsl@gmail.com'}
