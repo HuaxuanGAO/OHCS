@@ -1,3 +1,7 @@
+<head>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
 <h1>
   <%= @room.name %>
 </h1>
@@ -38,7 +42,7 @@
       <div class="input-group mb-3">
         <%= form.input :message, as: :string,
                                  wrapper: false,
-                                 label: false,
+                                 label: "message",
                                  input_html: {
                                    class: 'chat-input'
                                  } %>

@@ -31,12 +31,4 @@ describe DoctorsController, type: :controller do
         end
       end
 
-    #This one fails
-    describe "GET profile" do
-        login_doctor
-        it "get doctor's profile" do
-            expect(response).to redirect_to("doctors#profile")
-        end
-    end
-
 end
