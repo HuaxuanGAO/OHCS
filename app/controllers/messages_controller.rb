@@ -5,10 +5,10 @@ class MessagesController < ApplicationController
   
     def create
       # TODO change this line
-      @room_message = Message.create patient: current_patient || Patient.find(1),
+      @room_message = Message.create patient: current_patient,
                                      doctor: current_doctor || Doctor.find(1),
                                      room: @room,
-                                     message: params.dig(:message, :message) || params
+                                     message: params.dig(:message, :message)
       RoomChannel.broadcast_to @room, @room_message
     end
   
