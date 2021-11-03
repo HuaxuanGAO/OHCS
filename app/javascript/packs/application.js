@@ -8,13 +8,15 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+console.log("app js file loaded")
+
 Rails.start()
 global.Rails = Rails;
 Turbolinks.start()
 ActiveStorage.start()
 
-require("bootstrap")
-import "../../assets/stylesheets/application";
+// require("bootstrap")
+// import "../../assets/stylesheets/application";
 document.addEventListener("turbolinks:load", function() {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
