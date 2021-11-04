@@ -21,7 +21,7 @@ end
 describe DoctorsController, type: :controller do
 
     describe "GET /" do
-        login_doctor
+      let!(:doctor) { login_doctor}
     
         context "from login user" do
           it "should return 200:OK" do
@@ -29,6 +29,16 @@ describe DoctorsController, type: :controller do
             expect(response).to have_http_status(:success)
           end
         end
+        # Doctor.destroy(doctor.id)
+    end
+
+    describe 'GET /doctors/:id/profile' do
+      let!(:doctor) { login_doctor}
+      it 'shows doctor profile' do
+        get "/doctors/:id/profile", id: doctor.id
+        expect(response).to render_template("/doctors/:id/profile")
       end
+      # Doctor.destroy(doctor.id)
+    end
 
 end

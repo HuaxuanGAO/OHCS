@@ -11,6 +11,7 @@ module ControllerMacros
       @request.env["devise.mapping"] = Devise.mappings[:doctor]
       doctor = FactoryBot.create(:doctor)
       sign_in doctor
+      return doctor
     end
   end
 
@@ -19,6 +20,7 @@ module ControllerMacros
       @request.env["devise.mapping"] = Devise.mappings[:patient]
       patient = FactoryBot.create(:patient)
       sign_in patient
+      return patient
     end
   end
 end
