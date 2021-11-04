@@ -1,4 +1,4 @@
-Feature: existing patient chat
+Feature: existing patient create room
   As a existing patient
   I want to create a room
 
