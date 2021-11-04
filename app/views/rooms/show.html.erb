@@ -17,7 +17,11 @@
         <div class="chat-message-container">
           <div class="row no-gutters">
             <div class="col-auto text-center">
-              <img src="<%= gravatar_url(room_message.patient) %>" class="avatar" alt="">
+              <% if room_message.patient %>
+                <img src="<%= room_message.patient.gravatar_url %>" class="avatar" alt="">
+              <% else %>
+                <img src="<%= room_message.doctor.gravatar_url %>" class="avatar" alt="">
+              <% end %>
             </div>
 
             <div class="col">

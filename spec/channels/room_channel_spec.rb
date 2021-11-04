@@ -1,26 +1,5 @@
-# require "rails_helper"
-
-# RSpec.describe RoomChannel, :type => :channel do
-#   it "successfully subscribes" do
-#     Room.create(:name=> 1)
-#     subscribe room: 1
-#     expect(subscription).to be_confirmed
-#   end
-# end
-
-# RSpec.describe RoomChannel, :type => :channel do
-#     it "rejects subscription" do
-#       Room.create(:name=> 1)
-#       subscribe room_id: nil
-#       expect(subscription).to be_rejected
-#     end
-#   end
-
-# RSpec.describe ApplicationCable::Connection, :type => :channel do
-#   it "unauthorized connection" do
-#     expect { connect "/cable" }.to have_rejected_connection
-#   end
-# end
+require 'simplecov'
+SimpleCov.start 'rails'
 
 require "rails_helper"
 
