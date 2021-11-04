@@ -1,6 +1,6 @@
 Capybara.match = :prefer_exact
 
-test_patient = {:email => "patient@host.com", :username => "patient1", 
+test_patient = {:email => "patientlogin@host.com", :username => "patientlogin", 
   :password => "s3cr3t", :first_name => "one", :last_name => "tester", :birthday => "11-11-2000"}
 
 Given ('I have signed up as default test patient') do
