@@ -1,3 +1,7 @@
+<head>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
 <h1>
   <%= @room.name %>
 </h1>
@@ -13,7 +17,11 @@
         <div class="chat-message-container">
           <div class="row no-gutters">
             <div class="col-auto text-center">
-              <img src="<%= gravatar_url(room_message.patient) %>" class="avatar" alt="">
+              <% if room_message.patient %>
+                <img src="<%= room_message.patient.gravatar_url %>" class="avatar" alt="">
+              <% else %>
+                <img src="<%= room_message.doctor.gravatar_url %>" class="avatar" alt="">
+              <% end %>
             </div>
 
             <div class="col">
@@ -38,7 +46,7 @@
       <div class="input-group mb-3">
         <%= form.input :message, as: :string,
                                  wrapper: false,
-                                 label: false,
+                                 label: "message",
                                  input_html: {
                                    class: 'chat-input'
                                  } %>

@@ -1,10 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
   * ruby 3.0.0
   * Rails 6.1.4
@@ -21,6 +16,8 @@ Things you may want to cover:
   * `rails db:seed`
 
 * How to run the test suite
+  * `rails cucumber`
+  * `bundle exec rspec`
 
 * Services (job queues, cache servers, search engines, etc.)
 
