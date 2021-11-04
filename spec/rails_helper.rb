@@ -69,5 +69,5 @@ RSpec.configure do |config|
 
   config.include Warden::Test::Helpers
 
-  config.include ActionCable::TestHelper
+  # config.include ActionCable::TestHelper
 end

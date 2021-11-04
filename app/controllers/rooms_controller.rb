@@ -4,10 +4,6 @@ class RoomsController < ApplicationController
     # @room = current room when applicable
     before_action :load_entities
 
-    def index
-        @rooms = Room.all
-    end
-
     def dashboard
         @rooms = Room.all
     end
@@ -30,14 +26,14 @@ class RoomsController < ApplicationController
     def edit
     end
 
-    def update
-        if @room.update_attributes(permitted_parameters)
-        flash[:success] = "Room #{@room.name} was updated successfully"
-        redirect_to '/dashboard'
-        else
-        render :new
-        end
-    end
+    # def update
+    #     if @room.update_attributes(permitted_parameters)
+    #     flash[:success] = "Room #{@room.name} was updated successfully"
+    #     redirect_to '/dashboard'
+    #     else
+    #     render :new
+    #     end
+    # end
 
     def show
         @room_message = Message.new room: @room
