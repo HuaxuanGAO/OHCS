@@ -357,14 +357,14 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/application_controller.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           1,
-          16,
+          26,
           null,
           null,
           1,
@@ -379,71 +379,47 @@
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/application_helper.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null,
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/doctors_helper.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/helpers/doctors_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/messages_helper.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/helpers/messages_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/patients_helper.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/helpers/patients_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/helpers/rooms_helper.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/helpers/rooms_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/patients_controller.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/models/room.rb": {
         "lines": [
           1,
           1,
-          3,
-          3,
           null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
           null,
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/rooms_controller.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/controllers/rooms_controller.rb": {
         "lines": [
           1,
           null,
@@ -483,16 +459,16 @@
           null,
           null,
           1,
-          1,
+          2,
+          null,
+          2,
+          null,
           null,
           1,
           null,
-          null,
           1,
-          null,
-          1,
-          10,
-          10,
+          11,
+          11,
           null,
           null,
           1,
@@ -501,16 +477,7 @@
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/room.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/message.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/models/message.rb": {
         "lines": [
           1,
           1,
@@ -522,7 +489,40 @@
           null
         ]
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/channels/application_cable/channel.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/controllers/patients_controller.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          3,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -532,7 +532,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/channels/application_cable/connection.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           0,
@@ -558,7 +558,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/channels/room_channel.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/channels/room_channel.rb": {
         "lines": [
           0,
           0,
@@ -579,7 +579,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/doctors_controller.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/controllers/doctors_controller.rb": {
         "lines": [
           0,
           0,
@@ -617,7 +617,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/controllers/messages_controller.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/controllers/messages_controller.rb": {
         "lines": [
           0,
           0,
@@ -643,7 +643,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/jobs/application_job.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -656,7 +656,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/mailers/application_mailer.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -666,7 +666,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/application_record.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/models/application_record.rb": {
         "lines": [
           0,
           0,
@@ -675,7 +675,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/doctor.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/models/doctor.rb": {
         "lines": [
           0,
           null,
@@ -700,7 +700,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Files/Learner/Coding/CsClassesColumbia/Fall_2021/COMS_4995_ESaaS/project/OHCS/app/models/patient.rb": {
+      "/Users/stella/school/s1-cu/esaas/OHCS/app/models/patient.rb": {
         "lines": [
           0,
           null,
@@ -719,6 +719,6 @@
         }
       }
     },
-    "timestamp": 1635988865
+    "timestamp": 1635991368
   }
 }
