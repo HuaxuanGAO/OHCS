@@ -33,3 +33,9 @@ RSpec.describe RoomChannel, type: :channel do
     expect(subscription).to have_stream_for(Room.find(1))
   end
 end
+
+RSpec.describe ApplicationCable::Connection, :type => :channel do
+  it "failed connect" do
+    expect{connect "/cable"}.to raise_error()
+  end
+end
