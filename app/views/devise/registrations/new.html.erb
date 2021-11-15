@@ -4,7 +4,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.select(:role, User.roles.keys.map {|key| [key.humanize, key]}) %>    
+    <%= f.select(:role, options_for_select({"Patient" => "patient", "Doctor" => "doctor"})) %>
               
     <%= f.input :email,
                 required: true,
