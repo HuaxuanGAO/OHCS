@@ -1,4 +1,4 @@
-<h1>Patient Profile</h1>
+<h1>User Profile</h1>
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
     <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">
@@ -12,27 +12,27 @@
 <ul id="details">
   <li>
     Username:
-    <%= @patient.username %>
+    <%= @user.username %>
   </li>
   <li>
     Email:
-    <%= @patient.email %>
+    <%= @user.email %>
   </li>
   <li>
     Name:
-    <%= "#{@patient.first_name} #{@patient.last_name}" %>
+    <%= "#{@user.first_name} #{@user.last_name}" %>
   </li>
   <li>
     Gender:
-    <%= @patient.gender %>
+    <%= @user.gender %>
   </li>
   <li>
     Birthday:
-    <%= @patient.birthday.strftime("%B %d, %Y") %>
+    <%= @user.birthday.strftime("%B %d, %Y") %>
   </li>
 </ul>
 
 <div class="row">
-  <%= link_to 'Edit Info', '/patients/editinfo', :class => 'btn btn-primary col-2' %>
-  <%= link_to 'Change Password or Delete', '/patients/edit', :class => 'btn btn-danger col-2' %>
+  <%= link_to 'Edit Info', '/users/editinfo', :class => 'btn btn-primary col-2' %>
+  <%= link_to 'Change Password or Delete', '/users/edit', :class => 'btn btn-danger col-2' %>
 </div>
