@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
     def profile
-        if patient_signed_in?
-            @patient = current_patient
+        if user_signed_in?
+            @patient = current_user
         end
     end
 
@@ -10,11 +10,11 @@ class PatientsController < ApplicationController
     end
 
     def editinfo
-        @patient = current_patient
+        @patient = current_user
     end
 
     def update
-        @patient = current_patient
+        @patient = current_user
         @patient.update(update_params)
         flash[:notice] = "#{@patient.username} profile was successfully updated."
         redirect_to "/patients/#{@patient.id}/profile"
