@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   put '/patients/update', to: 'patients#update'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root controller: :patients, action: :login
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
   
 end
