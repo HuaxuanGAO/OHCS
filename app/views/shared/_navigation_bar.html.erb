@@ -4,31 +4,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <% if current_patient %>
+  <% if current_user %>
     <div class="dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="avatar" src="<%= current_patient.gravatar_url %>">
-        <%= current_patient.username %>
+        <img class="avatar" src="<%= current_user.gravatar_url %>">
+        <%= current_user.username %>
       </a>
 
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= button_to 'Profile', "/patients/#{current_patient.id}/profile", method: :get, class: 'dropdown-item' %>
-        <%= button_to 'Logout', destroy_patient_session_url, method: :delete, class: 'dropdown-item' %>
+        <%= button_to 'Profile', "/users/#{current_user.id}/profile", method: :get, class: 'dropdown-item' %>
+        <%= button_to 'Logout', destroy_user_session_url, method: :delete, class: 'dropdown-item' %>
       </div>
     </div>
   <% end %>
-
-    <% if current_doctor %>
-    <div class="dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class="avatar" src="<%= current_doctor.gravatar_url %>">
-        <%= current_doctor.username %>
-        </a>
-
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= button_to 'Profile', "/doctors/#{current_doctor.id}/profile", method: :get, class: 'dropdown-item' %>
-        <%= button_to 'Logout', destroy_doctor_session_path, method: :delete, class: 'dropdown-item' %>
-        </div>
-    </div>
-    <% end %>
 </nav>

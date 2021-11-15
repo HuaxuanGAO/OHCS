@@ -3,14 +3,12 @@ class ApplicationController < ActionController::Base
     protected
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :username, :first_name, :last_name, :department, :birthday, :gender])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :username, :first_name, :last_name, :department, :birthday, :gender, :role])
     end
 
     def after_sign_in_path_for(resource)
-        if current_patient
-            "/patients/#{current_patient.id}/profile" # your path
-        elsif current_doctor
-            "/doctors/#{current_doctor.id}/profile"
+        if current_user
+            "/users/#{current_user.id}/profile" # your path
         else
             "/"
         end

@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
     def show
         @room_message = Message.new room: @room
         # TODO: change this line
-        @room_messages = @room.messages.includes(:patient)
+        @room_messages = @room.messages.includes(:user)
     end
 
     protected
