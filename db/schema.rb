@@ -20,14 +20,12 @@ ActiveRecord::Schema.define(version: 2021_11_15_185652) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "room_id", null: false
-    t.integer "patient_id", null: false
-    t.integer "doctor_id"
+    t.integer "user_id"
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["doctor_id"], name: "index_messages_on_doctor_id"
-    t.index ["patient_id"], name: "index_messages_on_patient_id"
     t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -63,6 +61,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_185652) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "messages", "patients"
   add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
 end

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :username, uniqueness: true, presence: true
+  
   enum role: [:patient, :doctor, :admin]
   after_initialize do
     if self.new_record?
