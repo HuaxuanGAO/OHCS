@@ -1,7 +1,7 @@
 Capybara.match = :prefer_exact
 
-test_user = {:email => "1@host.com", :username => "user1", 
-  :password => "s3cr3t", :first_name => "one", :last_name => "tester", :birthday => "11-11-2000"}
+test_user = {:email => "user@host.com", :username => "user", 
+  :password => "testtest", :first_name => "one", :last_name => "tester", :birthday => "11-11-2000"}
 
 Given ('I have signed up as default test user') do
   visit('/users/sign_up')
@@ -15,11 +15,12 @@ Given ('I have signed up as default test user') do
 end
 
 Then('I should be on the home page') do
-  expect(page).to have_content "I am a user"
+  expect(page).to have_content "Log in"
 end
 
-Then('I should be on the user profile page') do
-  expect(page).to have_content "Patient Profile"
+Then('I should be on the profile page') do
+  expect(page).to have_content "Profile"
+  expect(page).to have_content "Edit Info"
 end
 
 Then('I should be on the log in page') do
@@ -55,5 +56,3 @@ end
 Then('I should see the sign out message') do
   expect(page).to have_content "Signed out successfully"
 end
-
-# select "option_name_here", :from => "organizationSelect"

@@ -1,6 +1,6 @@
 Given('I send a test message') do    
     fill_in('message', :with => "hello")
-    click_button('Send')    
+    click_button('Send')
 end
 
 # TODO currently this will fail because the message need to reference both patient and doctor
