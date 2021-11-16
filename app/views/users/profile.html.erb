@@ -1,7 +1,7 @@
 <% if @user.role == "patient" %>
 <h1>Patient Profile</h1>
 <% elsif @user.role == "doctor" %>
-<h1>Dcotor Profile</h1>
+<h1>Doctor Profile</h1>
 <% else %>
 <h1>Admin Profile</h1>
 <% end %>
@@ -39,6 +39,10 @@
 </ul>
 
 <div class="row">
+  <%# <div class="col"> %>
   <%= link_to 'Edit Info', '/users/editinfo', :class => 'btn btn-primary col-2' %>
+  <%# </div> %>
+  <%# <div class="col"> %>
   <%= link_to 'Change Password or Delete', '/users/edit', :class => 'btn btn-danger col-2' %>
+  <%# </div> %>
 </div>

@@ -1,6 +1,6 @@
-Given /the following patients exist/ do |patients_table|
-  patients_table.hashes.each do |patient|
-    Patient.create patient
+Given /the following user exist/ do |users_table|
+  users_table.hashes.each do |user|
+    User.create user
   end
 end
 
