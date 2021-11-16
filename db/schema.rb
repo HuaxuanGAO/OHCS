@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_11_15_185652) do
     t.string "department"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_doctors_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -32,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_11_15_185652) do
     t.string "med_record"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|

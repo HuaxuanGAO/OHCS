@@ -1,4 +1,10 @@
-<h1>User Profile</h1>
+<% if @user.role == "patient" %>
+<h1>Patient Profile</h1>
+<% elsif @user.role == "doctor" %>
+<h1>Dcotor Profile</h1>
+<% else %>
+<h1>Admin Profile</h1>
+<% end %>
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
     <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">

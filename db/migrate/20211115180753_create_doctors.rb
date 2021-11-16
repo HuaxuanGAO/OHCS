@@ -4,6 +4,8 @@ class CreateDoctors < ActiveRecord::Migration[6.1]
       t.string :department
 
       t.timestamps
+      t.references :user
+
     end
   end
 end
