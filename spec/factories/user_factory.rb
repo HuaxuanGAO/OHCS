@@ -1,11 +1,11 @@
 FactoryBot.define do
-    factory :doctor do
-      email {'ljcjsl@gmail.com'}
-      username {'ljcjsl'}
-      last_name {'JC'}
+    factory :user do
+      role {'patient'}
+      email {'patient@gmail.com'}
+      username {'patient1'}
+      last_name {'Juc'}
       first_name {'Lu'}
-      department {'Internal'}
-      gender {'Male'}
+      gender {'Female'}
       birthday {"10-12-1996"}
       password {'randompass'}
       password_confirmation {'randompass'}

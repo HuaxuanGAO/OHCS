@@ -18,17 +18,26 @@ if RUBY_VERSION>='2.6.0'
   end
 end
 
-describe DoctorsController, type: :controller do
+describe UsersController, type: :controller do
 
-    describe "GET /" do
-        login_doctor
-    
-        context "from login user" do
-          it "should return 200:OK" do
-            get :index
-            expect(response).to have_http_status(:success)
-          end
-        end
+  describe "patient login" do
+    login_user('patient')
+    context "from login user" do
+      it "should return 200:OK" do
+        get :index
+        expect(response).to have_http_status(:success)
       end
+    end
+  end
+
+  describe "doctor login" do
+    login_user('doctor')
+    context "from login user" do
+      it "should return 200:OK" do
+        get :index
+        expect(response).to have_http_status(:success)
+      end
+    end
+  end
 
 end
