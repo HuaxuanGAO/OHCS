@@ -39,7 +39,7 @@
   <% if @user.role == "patient" %>
     <% if @patient.med_record%>
       <li>
-      <%= link_to 'Medical Record', "/users/#{@user.id}/med_record" %>
+      <%= link_to 'Medical Record', "https://#{@patient.med_record}", target: :_blank%>
       </li>
     <% else %>
       <li class="action_needed">
@@ -47,18 +47,34 @@
       </li>
     <% end %>
   <% elsif @user.role == "doctor" %>
-    <% if !@doctor.department %>
-      <h4 class="alert-heading">
-        You need to choose department in edit.
-      </h4>
-    <% else %>
+    <% if @doctor.department %>
+      <li>
+      Department:
       <%= @doctor.department %>
+      </li>
+    <% else %>
+      <li class="action_needed">
+        Department: You need to choose department in edit to let patients find you.
+      </li>
+    <% end %>
+
+    <% if !@schedules %>
+      <li class="action_needed">
+        Current Schedule: You need to set up your schedule to let patients book with you.
+      </li>
+    <% else %>
+      <li>
+      Current Schedule:
+      <%= render "calendar_preview", schedules: @schedules %>
+      </li>
     <% end %>
   <% end %>
-
 </ul>
 
 <div class="row">
   <%= link_to 'Edit Info', '/users/editinfo', :class => 'btn btn-primary col-2' %>
   <%= link_to 'Change Password or Delete', '/users/edit', :class => 'btn btn-danger col-2' %>
+  <% if @user.role == "doctor" %>
+    <%= link_to 'Set up / modify your schedule', '/schedules', :class => 'btn btn-primary col-2' %>
+  <% end %>
 </div>

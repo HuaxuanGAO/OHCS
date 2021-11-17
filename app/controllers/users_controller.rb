@@ -7,7 +7,8 @@ class UsersController < ApplicationController
                 @patient = Patient.find_by(user_id: @user.id)
             elsif @user.role == "doctor" 
                 @doctor = Doctor.find_by(user_id: @user.id)
-            end 
+                @schedules = Schedule.find_by(doctor_id: @doctor.id)
+            end
         end
     end
 
@@ -33,6 +34,8 @@ class UsersController < ApplicationController
             @patient.update(patient_update_params)
         elsif @user.role == "doctor" 
             @doctor = Doctor.find_by(user_id: @user.id)
+            doctor_update_params = params.require(:user).require(:doctor_attributes).permit(:department)
+            @doctor.update(doctor_update_params)
         end
         flash[:notice] = "#{@user.username} profile was successfully updated."
         redirect_to "/users/#{@user.id}/profile"
