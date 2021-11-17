@@ -1,0 +1,14 @@
+
+<h2>Calendar View</h2>
+
+<%= month_calendar(events: @appointments) do |date, appointments| %>
+  <%= date %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      <%= appointment.name %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', appointments_path %>

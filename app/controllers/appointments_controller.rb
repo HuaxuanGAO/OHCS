@@ -56,6 +56,10 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def calendar
+    @appointments = Appointment.where(patient_id: current_user.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
