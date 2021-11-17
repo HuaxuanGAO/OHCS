@@ -1,5 +1,5 @@
 <div class="container m-auto my-4">
-  <% if !@schedules %>
+  <% if !@schedules || @schedules.length == 0 %>    
     <%= render "schedules_cta" %>
   <% else %>
     <%= render "schedules_landing", schedules: @schedules %>

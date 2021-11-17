@@ -58,7 +58,7 @@
       </li>
     <% end %>
 
-    <% if !@schedules %>
+    <% if @schedules.length == 0 %>
       <li class="action_needed">
         Current Schedule: You need to set up your schedule to let patients book with you.
       </li>
