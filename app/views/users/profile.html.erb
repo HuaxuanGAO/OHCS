@@ -36,6 +36,28 @@
     Birthday:
     <%= @user.birthday.strftime("%B %d, %Y") %>
   </li>
+
+  <% if @user.role == "patient" %>
+    <% if @patient.med_record%>
+      <li>
+      Medical Record:
+      <%= @patient.med_record %>
+      </li>
+    <% else %>
+      <li class="action_needed">
+      Medical Record: You can add a medical record in edit
+      </li>
+    <% end %>
+  <% elsif @user.role == "doctor" %>
+    <% if !@doctor.department %>
+      <h4 class="alert-heading">
+        You need to choose department in edit.
+      </h4>
+    <% else %>
+      <%= @doctor.department %>
+    <% end %>
+  <% end %>
+
 </ul>
 <% if @user.role == "patient"%>
 <%= content_tag(:iframe,'', width: 1000, height: 800, src: @user.patient.med_record) %>

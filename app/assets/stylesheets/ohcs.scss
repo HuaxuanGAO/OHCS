@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import "bootstrap/scss/bootstrap";
 
+.action_needed {
+  color: red;
+}
+
 .avatar {
     max-height:30px;
     border-radius: 15px;

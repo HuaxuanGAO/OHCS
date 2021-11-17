@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+
     def profile
         if user_signed_in?
             @user = current_user
+            if @user.role == "patient" 
+                @patient = Patient.find_by(user_id: @user.id)
+            elsif @user.role == "doctor" 
+                @doctor = Doctor.find_by(user_id: @user.id)
+            end 
         end
     end
 
@@ -11,11 +17,23 @@ class UsersController < ApplicationController
 
     def editinfo
         @user = current_user
+        if @user.role == "patient" 
+            @patient = Patient.find_by(user_id: @user.id)
+        elsif @user.role == "doctor" 
+            @doctor = Doctor.find_by(user_id: @user.id)
+        end
     end
 
     def update
         @user = current_user
         @user.update(update_params)
+        if @user.role == "patient" 
+            @patient = Patient.find_by(user_id: @user.id)
+            patient_update_params = params.require(:user).require(:patient_attributes).permit(:med_record)
+            @patient.update(patient_update_params)
+        elsif @user.role == "doctor" 
+            @doctor = Doctor.find_by(user_id: @user.id)
+        end
         flash[:notice] = "#{@user.username} profile was successfully updated."
         redirect_to "/users/#{@user.id}/profile"
     end

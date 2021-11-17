@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   has_one :patient, dependent: :destroy
   has_one :doctor, dependent: :destroy
+  accepts_nested_attributes_for :doctor, :patient
   after_create :init_patient_or_doctor
   
   enum role: [:patient, :doctor, :admin]
