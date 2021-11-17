@@ -8,7 +8,7 @@
     <%= f.input :start_time %>
     <%= f.input :end_time %>
     <%= f.association :patient, :as => :hidden, :input_html => { :value => current_user.id } %>
-    <%= f.association :doctor %>
+    <%= f.association :doctor, collection: Doctor.getallnames %>
   </div>
 
   <div class="form-actions">
