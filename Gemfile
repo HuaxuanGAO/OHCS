@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'google-api-client'
+gem 'google_drive'
+
 # Login form
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
