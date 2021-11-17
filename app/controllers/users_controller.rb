@@ -38,6 +38,14 @@ class UsersController < ApplicationController
         redirect_to "/users/#{@user.id}/profile"
     end
 
+    def med_record
+        @user = current_user
+    end
+
+    def appointments
+        @user = current_user
+    end
+
     private
     # Making "internal" methods private is not required, but is a common practice.
     # This helps make clear which methods respond to requests, and which ones do not.

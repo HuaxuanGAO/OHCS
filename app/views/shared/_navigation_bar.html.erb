@@ -12,7 +12,10 @@
       </a>
 
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= button_to 'Dashboard', "/dashboard", method: :get, class: 'dropdown-item' %>
         <%= button_to 'Profile', "/users/#{current_user.id}/profile", method: :get, class: 'dropdown-item' %>
+        <%= button_to 'Appointments', "/appointments", method: :get, class: 'dropdown-item' %>
+        <%= button_to 'Medical Record', "/users/#{current_user.id}/med_record", method: :get, class: 'dropdown-item' %>
         <%= button_to 'Logout', destroy_user_session_url, method: :delete, class: 'dropdown-item' %>
       </div>
     </div>

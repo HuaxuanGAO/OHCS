@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :appointments
   resources :doctors
   resources :patients
   devise_for :users
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'rooms#dashboard', as: 'dashboard'
   get '/rooms/:id/chat', to: 'rooms#room'
   get '/users/:id/profile', to: 'users#profile' 
+  get '/users/:id/appointments', to: 'users#appointment' 
+  get '/users/:id/med_record', to: 'users#med_record' 
   get '/users', to: 'users#index' 
   get '/users/editinfo', to: 'users#editinfo' 
   put '/users/update', to: 'users#update' 

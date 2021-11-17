@@ -13,7 +13,6 @@
     </div>
   <% end %>
 <% end %>
-<a href="/dashboard">Rooms</a>
 
 <ul id="details">
   <li>
@@ -40,8 +39,7 @@
   <% if @user.role == "patient" %>
     <% if @patient.med_record%>
       <li>
-      Medical Record:
-      <%= @patient.med_record %>
+      <%= link_to 'Medical Record', "/users/#{@user.id}/med_record" %>
       </li>
     <% else %>
       <li class="action_needed">
@@ -59,15 +57,8 @@
   <% end %>
 
 </ul>
-<% if @user.role == "patient"%>
-<%= content_tag(:iframe,'', width: 1000, height: 800, src: @user.patient.med_record) %>
-<%end%>
 
 <div class="row">
-  <%# <div class="col"> %>
   <%= link_to 'Edit Info', '/users/editinfo', :class => 'btn btn-primary col-2' %>
-  <%# </div> %>
-  <%# <div class="col"> %>
   <%= link_to 'Change Password or Delete', '/users/edit', :class => 'btn btn-danger col-2' %>
-  <%# </div> %>
 </div>
