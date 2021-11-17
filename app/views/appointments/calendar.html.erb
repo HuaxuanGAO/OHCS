@@ -6,7 +6,7 @@
 
   <% appointments.each do |appointment| %>
     <div>
-      <%= appointment.name %>
+      <%= link_to appointment.name, appointment.room %>
     </div>
   <% end %>
 <% end %>

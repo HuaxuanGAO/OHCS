@@ -25,7 +25,7 @@ RSpec.describe RoomChannel, type: :channel do
   end
 
   it "subscribes " do 
-    Room.create(:name=> 1)
+    FactoryBot.create(:appointment)
     subscribe(room: 1)
     expect(subscription).to be_confirmed
 

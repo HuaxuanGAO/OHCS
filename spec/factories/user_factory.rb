@@ -1,8 +1,8 @@
 FactoryBot.define do
     factory :user do
       role {'patient'}
-      email {'patient@gmail.com'}
-      username {'patient1'}
+      email {"#{role}@gmail.com"}
+      username {"#{role}"}
       last_name {'Juc'}
       first_name {'Lu'}
       gender {'Female'}

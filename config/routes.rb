@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :messages
   resources :rooms
-  get '/dashboard', to: 'rooms#dashboard', as: 'dashboard'
-  get '/rooms/:id/chat', to: 'rooms#room'
+  # get '/dashboard', to: 'rooms#dashboard', as: 'dashboard'
+  # get '/rooms/:id/chat', to: 'rooms#room'
   get '/users/:id/profile', to: 'users#profile' 
   get '/users/:id/appointments', to: 'users#appointment' 
   get '/users/:id/med_record', to: 'users#med_record' 
