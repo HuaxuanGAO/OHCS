@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   has_one :patient, dependent: :destroy
   has_one :doctor, dependent: :destroy
-  after_save :init_patient_or_doctor
+  after_create :init_patient_or_doctor
   
   enum role: [:patient, :doctor, :admin]
   after_initialize do
