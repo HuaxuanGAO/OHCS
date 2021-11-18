@@ -21,7 +21,7 @@
         <td><%= appointment.start_time %></td>
         <td><%= appointment.end_time %></td>
         <%# <td><%= appointment.patient_id </td> %>
-        <td><%= appointment.doctor_id %></td>
+        <td><%= User.find_by(id: appointment.doctor_id).first_name+" "+User.find_by(id: appointment.doctor_id).last_name %></td>
         <td><%= link_to 'Enter Chat Room', appointment.room %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
