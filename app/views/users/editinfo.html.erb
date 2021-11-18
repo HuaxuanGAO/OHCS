@@ -15,12 +15,6 @@
         <%= p.input :med_record %>
       <% end %>
     <% end %>
-    <% if @doctor %>
-      <%= f.fields_for :doctor do |p| %>
-        <%= p.input :department, required: true,
-              collection: ['General outpatient','Internal','Surgery','Neurology',"E.N.T.","Orthopedic"] %>
-      <% end %>
-    <% end %>
   </div>
   </br>
   <div class="form-actions">

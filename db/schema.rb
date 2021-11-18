@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_17_180913) do
+ActiveRecord::Schema.define(version: 2021_11_17_172133) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "name"
@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 2021_11_17_180913) do
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer "doctor_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["doctor_id"], name: "index_schedules_on_doctor_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -91,5 +82,4 @@ ActiveRecord::Schema.define(version: 2021_11_17_180913) do
   add_foreign_key "appointments", "patients"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "schedules", "doctors"
 end

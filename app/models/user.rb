@@ -24,8 +24,8 @@ class User < ApplicationRecord
   def init_patient_or_doctor
     if self.role == "patient"
       patient = Patient.create
-      # src = 'https://docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing'
-      # patient.update_attribute(:med_record, src)
+      src = 'https://docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing'
+      patient.update_attribute(:med_record, src)
       self.patient = patient
     elsif self.role == "doctor"
       doctor = Doctor.create
