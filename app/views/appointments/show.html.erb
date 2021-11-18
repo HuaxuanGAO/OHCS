@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @appointment.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @appointment.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @appointment.end_time %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= User.find_by(id: @appointment.patient_id).first_name+" "+User.find_by(id: @appointment.patient_id).last_name %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= User.find_by(id: @appointment.doctor_id).first_name+" "+User.find_by(id: @appointment.doctor_id).last_name %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

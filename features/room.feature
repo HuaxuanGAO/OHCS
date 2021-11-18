@@ -1,17 +1,18 @@
-Feature: existing patient create room
-  As a existing patient
-  I want to create a room
+Feature: existing user enter chat room
+  As a existing user
+  I want to enter a room
 
-Background: default patient logged in
-  Given I have login with the correct credential
+Background: default user logged in
+  Given the default patient and doctor exist  
+  And the default appointment and room exists  
+  And I have login with the correct credential
 
-Scenario: patient create a room
-  Given I am on the dashboard
-  And I create a room
+Scenario: user enter a room  
+  Given I am on the appointment page
+  And I follow "Enter Chat Room"
   Then I should see the room
 
-Scenario: patient enter a room
-  Given I am on the dashboard
-  And I create a room
-  And I enter room
-  Then I should be in the room
+Scenario: user send message  
+  Given I am on the room page
+  And I send a test message
+  Then I should see the test message

@@ -1,10 +1,11 @@
 class RoomChannel < ApplicationCable::Channel
-  def subscribed
-    puts "subscribed #{params}"
+  def subscribed    
     if Room.exists?(id: params[:room])
       room = Room.find params[:room]
       stream_for room
+      puts "subscribed #{params}"
     else
+      puts "room DNE #{params}"
       reject
     end
   end

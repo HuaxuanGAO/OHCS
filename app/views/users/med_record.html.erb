@@ -1,0 +1,3 @@
+<% if @user.role == "patient"%>
+    <%= content_tag(:iframe,'', width: 1000, height: 800, src: @user.patient.med_record) %>
+<%end%>

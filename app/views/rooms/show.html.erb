@@ -17,10 +17,8 @@
         <div class="chat-message-container">
           <div class="row no-gutters">
             <div class="col-auto text-center">
-              <% if room_message.patient %>
-                <img src="<%= room_message.patient.gravatar_url %>" class="avatar" alt="">
-              <% else %>
-                <img src="<%= room_message.doctor.gravatar_url %>" class="avatar" alt="">
+              <% if room_message.user %>
+                <img src="<%= room_message.user.gravatar_url %>" class="avatar" alt="">
               <% end %>
             </div>
 
@@ -51,11 +49,10 @@
                                    class: 'chat-input'
                                  } %>
         <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+        <%= form.input :room_id, as: :hidden %>
+        <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
         </div>
       </div>
-
-      <%= form.input :room_id, as: :hidden %>
     <% end %>
   </div>
 

@@ -4,24 +4,24 @@ class RoomsController < ApplicationController
     # @room = current room when applicable
     before_action :load_entities
 
-    def dashboard
-        @rooms = Room.all
-    end
+    # def dashboard
+    #     @rooms = Room.all
+    # end
 
     def new
         @room = Room.new
     end
 
-    def create
-        @room = Room.new permitted_parameters
+    # def create
+    #     @room = Room.new permitted_parameters
 
-        if @room.save
-        flash[:success] = "Room #{@room.name} was created successfully"
-        redirect_to '/dashboard'
-        else
-        render :new
-        end
-    end
+    #     if @room.save
+    #     flash[:success] = "Room #{@room.name} was created successfully"
+    #     redirect_to '/dashboard'
+    #     else
+    #     render :new
+    #     end
+    # end
 
     def edit
     end
@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
     def show
         @room_message = Message.new room: @room
         # TODO: change this line
-        @room_messages = @room.messages.includes(:patient)
+        @room_messages = @room.messages.includes(:user)
     end
 
     protected
