@@ -39,7 +39,7 @@
   <% if @user.role == "patient" %>
     <% if @patient.med_record%>
       <li>
-      <%= link_to 'Medical Record', "/users/#{@user.id}/med_record" %>
+      <%= link_to 'Medical Record', "https://#{@patient.med_record}", target: :_blank%>
       </li>
     <% else %>
       <li class="action_needed">
@@ -47,12 +47,15 @@
       </li>
     <% end %>
   <% elsif @user.role == "doctor" %>
-    <% if !@doctor.department %>
-      <h4 class="alert-heading">
-        You need to choose department in edit.
-      </h4>
-    <% else %>
+    <% if @doctor.department %>
+      <li>
+      Department:
       <%= @doctor.department %>
+      </li>
+    <% else %>
+      <li class="action_needed">
+        Department: You need to choose department in edit to let patients find you.
+      </li>
     <% end %>
   <% end %>
 

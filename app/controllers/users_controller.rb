@@ -33,6 +33,8 @@ class UsersController < ApplicationController
             @patient.update(patient_update_params)
         elsif @user.role == "doctor" 
             @doctor = Doctor.find_by(user_id: @user.id)
+            doctor_update_params = params.require(:user).require(:doctor_attributes).permit(:department)
+            @doctor.update(doctor_update_params)
         end
         flash[:notice] = "#{@user.username} profile was successfully updated."
         redirect_to "/users/#{@user.id}/profile"
