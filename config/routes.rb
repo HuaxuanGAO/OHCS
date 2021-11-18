@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/users/editinfo', to: 'users#editinfo' 
   put '/users/update', to: 'users#update' 
   get '/appointments/:id/calendar', to: 'appointments#calendar'
+  get 'active-sessions', to: "appointments#active_sessions"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_scope :user do
