@@ -17,11 +17,11 @@ users.each do |user|
     User.create!(user)
 end
 
-Doctor.find_by(id:1).update({department:"Anesthesiology"})
-Patient.create({med_record:"https://docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing",user_id:2})
-Patient.create({med_record:"https://docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing",user_id:3})
+Doctor.find_by(id:1).update({department:"Internal"})
+Patient.create({med_record:"docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing",user_id:2})
+Patient.create({med_record:"docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing",user_id:3})
 
 Appointment.create({name: "appointment1",start_time:"2021-11-17 19:00:00",end_time:"2021-11-17 20:00:00",patient_id:2,doctor_id:1})
-Room.create({name: "appointment1"})
-Message.create({room_id:1, user_id:1,message:"How are you?"})
-Message.create({room_id:1, user_id:2,message:"Not well."})
+# Room.create({name: "appointment1"})
+# Message.create({room_id:1, user_id:1,message:"How are you?"})
+# Message.create({room_id:1, user_id:2,message:"Not well."})

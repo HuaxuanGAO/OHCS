@@ -2,7 +2,7 @@
   <%= date %>
   <% schedules.each do |schedule| %>
     <div>
-      <%= link_to "Schedule on #{schedule.start_time}", schedule, class: "link" %>
+      <%= link_to "Schedule on #{schedule.start_time} - #{schedule.end_time}", schedule, class: "link" %>
     </div>
   <% end %>
 <% end %>
