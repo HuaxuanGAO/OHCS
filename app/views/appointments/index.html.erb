@@ -30,7 +30,7 @@
         <% end %>
         <td><%= link_to 'Enter Chat Room', appointment.room %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-destroy"%></td>
       </tr>
     <% end %>
   </tbody>
