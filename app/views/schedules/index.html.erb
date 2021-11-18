@@ -1,0 +1,11 @@
+<div class="container m-auto my-4">
+  <% if !@schedules || @schedules.length == 0 %>    
+    <%= render "schedules_cta" %>
+  <% else %>
+    <%= render "schedules_landing", schedules: @schedules %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back", "/users/#{@current_user.id}/profile", :class => 'btn btn-primary col-2' %>
+</div>
