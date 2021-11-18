@@ -21,7 +21,7 @@
 <div class="bg-white p-10 border rounded">
   <div id="all-schedules" class="tab-panel">
 
-     <h1>Schedules</h1>
+     <h2> All Schedules</h2>
 
      <% @schedules.each do |schedule| %>
         <div class="flex flex-wrap items-center justify-start p-4 border-b border-grey-light mb-6">
@@ -32,16 +32,21 @@
             </div>
           </div>
         </div>
-
-        <%= link_to "Delete Schedule", schedule, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-destroy ml-4" %>
+        <%= link_to "Edit schedule",  "/schedules/#{schedule.id}/edit", :class => 'btn btn-primary col-2' %>
+        <%# <%= link_to "Delete Schedule", schedule, method: :destroy, data: { confirm: "Are you sure?" }, :class => 'btn btn-danger col-2' %>
+        <%= link_to 'Delete Schedule', schedule_path(@schedule.id), method: :delete, data: { confirm: "Are you sure? "}, :class => 'btn btn-danger col-2'%>
      <% end %>
   </div>
   </br>
   <div id="calendar" class="tab-panel active">
     <h2>Schedule Calendar</h2>
     <div id="Schedule-calendar">
-      <%= render "calendar", schedules: schedules  %>
+      <%= render "calendar", schedules: @schedules  %>
     </div>
+  </div>
+
+  <div>
+  <%= link_to "Set up another available schedule slot", new_schedule_path, :class => 'btn btn-primary col-2' %>
   </div>
 </div>
 

@@ -3,7 +3,8 @@
 
     <div class="flex flex-wrap justify-between items-center mb-5">
       <h1><%= "Schedule on #{@schedule.start_time}" %></h1>
-      <%= link_to "Remove Schedule", schedule_path(@schedule), method: :delete, data: { confirm: "Are you sure you want to cancel? "}, class: "btn btn-destroy" %>
+      <%= link_to 'Delete Schedule', schedule_path(@schedule.id), method: :delete, data: { confirm: "Are you sure? "}, :class => 'btn btn-danger col-2'%>
+      <%# <%= link_to "Remove Schedule", schedule_path(@schedule), method: :destory, data: { confirm: "Are you sure? "}, :class => 'btn btn-danger col-2' %>
     </div>
 
     <div class="border p-6 bg-grey-lighter mb-5 flex items-center justify-between">
@@ -15,3 +16,5 @@
         End time: <span class="font-bold"><%= readable_time(@schedule.end_time) %></span>
       </p>
     </div>
+
+    <%= link_to 'Back', '/schedules', :class => 'btn btn-primary col-2' %>

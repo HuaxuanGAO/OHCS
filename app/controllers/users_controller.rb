@@ -7,7 +7,7 @@ class UsersController < ApplicationController
                 @patient = Patient.find_by(user_id: @user.id)
             elsif @user.role == "doctor" 
                 @doctor = Doctor.find_by(user_id: @user.id)
-                @schedules = Schedule.where("doctor_id = ?", params[:doctor])
+                @schedules = Schedule.where("doctor_id = #{@doctor.id}")
             end
         end
     end
