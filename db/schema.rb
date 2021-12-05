@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_17_180913) do
+ActiveRecord::Schema.define(version: 2021_12_05_183635) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "name"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_11_17_180913) do
     t.integer "doctor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "slot_id", null: false
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
+    t.index ["slot_id"], name: "index_appointments_on_slot_id"
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -67,6 +69,16 @@ ActiveRecord::Schema.define(version: 2021_11_17_180913) do
     t.index ["doctor_id"], name: "index_schedules_on_doctor_id"
   end
 
+  create_table "slots", force: :cascade do |t|
+    t.boolean "available", default: true
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "schedule_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["schedule_id"], name: "index_slots_on_schedule_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -89,7 +101,9 @@ ActiveRecord::Schema.define(version: 2021_11_17_180913) do
 
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "patients"
+  add_foreign_key "appointments", "slots"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "schedules", "doctors"
+  add_foreign_key "slots", "schedules"
 end

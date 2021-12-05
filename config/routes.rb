@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :slots
   resources :schedules
   resources :appointments
   resources :doctors
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   put '/users/update', to: 'users#update' 
   get '/appointments/:id/calendar', to: 'appointments#calendar'
   get 'active-sessions', to: "appointments#active_sessions"
+
+  # match '/appointments/department', to: 'appointments#select_department', via: [:get], as: "select_department"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_scope :user do

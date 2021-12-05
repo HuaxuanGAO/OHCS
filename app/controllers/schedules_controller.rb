@@ -42,6 +42,10 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.save
+        start_time = @schedule.start_time
+        end_time = @schedule.end_time
+        slots_array = Slot.new.generate_time_slots(start_time: start_time, end_time: end_time)
+        slots_array.map { |slot_time| Slot.create!(schedule: @schedule, start_time: slot_time[0], end_time: slot_time[1]) }
         format.html { redirect_to @schedule, notice: "Schedule was successfully created." }
         format.json { render :show, status: :created, location: @schedule }
       else
@@ -55,6 +59,11 @@ class SchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @schedule.update(schedule_params)
+        Slot.where(schedule: @schedule.id).destroy_all
+        start_time = @schedule.start_time
+        end_time = @schedule.end_time
+        slots_array = Slot.new.generate_time_slots(start_time: start_time, end_time: end_time)
+        slots_array.map { |slot_time| Slot.create!(schedule: @schedule, start_time: slot_time[0], end_time: slot_time[1]) }
         format.html { redirect_to @schedule, notice: "Schedule was successfully updated." }
         format.json { render :show, status: :ok, location: @schedule }
       else

@@ -1,43 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="container m-auto my-4">
+  <% if !@appointments || @appointments.length == 0 %>    
+    <%= render "appointment_cta" %>
+  <% else %>
+    <%= render "appointment_landing", appointments: @appointments %>
+  <% end %>
+</div>
 
-<h1>Appointments</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <% if current_user.role == "patient" %>
-        <th>Doctor</th>
-      <% elsif current_user.role == "doctor" %>
-        <th>Patient</th>
-      <% end %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @appointments.each do |appointment| %>
-      <tr>
-        <td><%= appointment.name %></td>
-        <td><%= appointment.start_time %></td>
-        <td><%= appointment.end_time %></td>
-        <% if current_user.role == "patient" %>
-          <td><%= User.find_by(id: appointment.doctor_id).first_name+" "+User.find_by(id: appointment.doctor_id).last_name %></td>
-        <% elsif current_user.role == "doctor" %>
-          <td><%= User.find_by(id: appointment.patient_id).first_name+" "+User.find_by(id: appointment.patient_id).last_name %></td>
-        <% end %>
-        <td><%= link_to 'Enter Chat Room', appointment.room %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<% if current_user.role == "patient" %>
-  <%= link_to 'New Appointment', new_appointment_path, :class => 'btn btn-primary' %>
-<% end %>
-<%= link_to 'Calendar View', "appointments/#{current_user.id}/calendar", :class => 'btn btn-primary' %>
+<div>
+  <%= link_to "Back", "/users/#{@current_user.id}/profile", :class => 'btn btn-primary col-2' %>
+</div>
