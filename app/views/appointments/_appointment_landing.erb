@@ -21,12 +21,12 @@
     <% @appointments.each do |appointment| %>
       <tr>
         <td><%= appointment.name %></td>
-        <td><%= appointment.start_time %></td>
-        <td><%= appointment.end_time %></td>
+        <td><%= Slot.find(appointment.slot_id).start_time %></td>
+        <td><%= Slot.find(appointment.slot_id).end_time %></td>
         <% if current_user.role == "patient" %>
-          <td><%= User.find_by(id: appointment.doctor_id).first_name+" "+User.find_by(id: appointment.doctor_id).last_name %></td>
+          <td><%= appointment.doctor.user.first_name + " " + appointment.doctor.user.last_name %></td>
         <% elsif current_user.role == "doctor" %>
-          <td><%= User.find_by(id: appointment.patient_id).first_name+" "+User.find_by(id: appointment.patient_id).last_name %></td>
+          <td><%= appointment.patient.user.first_name + " " + appointment.patient.user.last_name %></td>
         <% end %>
         <td><%= link_to 'Enter Chat Room', appointment.room %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>

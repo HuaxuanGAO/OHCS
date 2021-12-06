@@ -4,8 +4,10 @@ class AppointmentsController < ApplicationController
   # GET /appointments or /appointments.json
   def index
     if current_user.role == "patient"
-      @appointments = Appointment.where(patient_id: current_user.id)
+      @patient = Patient.where(user_id: current_user.id)[0]
+      @appointments = Appointment.where(patient_id: @patient.id)
     elsif current_user.role == "doctor"
+      @doctor = Doctor.where(user_id: current_user.id)[0]
       @appointments = Appointment.where(doctor_id: current_user.id)
     end
   end
