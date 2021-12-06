@@ -8,9 +8,9 @@ class Slot < ApplicationRecord
     total = num_slots(start_time, end_time)
     1.upto(total) do
       slot = []
-      slot << start.to_formatted_string
-      start += (DURATION_IN_MINUTES * 60)
-      slot << start.to_formatted_string
+      slot << start_time.to_formatted_s
+      start_time += (DURATION_IN_MINUTES * 60)
+      slot << start_time.to_formatted_s
       slots << slot
     end
     slots
@@ -28,7 +28,3 @@ class Slot < ApplicationRecord
   end
 
 end
-
-slots_array = Slot.new.generate_time_slots(start_time: start_time, end_time: end_time)
-
-slots_array.map { |slot_time| Slot.create!(schedule: @schedule, start_time: slot_time[0], end_time: slot_time[1]) }

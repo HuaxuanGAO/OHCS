@@ -64,8 +64,31 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.where(patient_id: current_user.id)
   end
 
-  # def select_department
+  def select_department
+  end
 
+  def select_doctor
+    department = params[:department]
+    @doctors = Doctor.with_department(department)
+    @users = []
+    @doctors.each do |doc|
+      id = doc.user_id
+      user = User.find(id)
+      name = "#{user.first_name} #{user.last_name}"
+      @users << [name, doc.id]
+    end
+  end
+
+  def select_from_calendar
+    @id = params[:doc_id]
+    @schedules = Schedule.where(doctor_id: @id)
+  end
+
+  def select_slot
+    id = params[:schedule_id]
+    @slots = Slot.where(schedule_id: id)
+    @doc_id = params[:doc_id]
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

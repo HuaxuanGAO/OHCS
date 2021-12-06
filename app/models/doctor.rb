@@ -16,10 +16,4 @@ class Doctor < ApplicationRecord
         return output
     end
 
-    def self.with_name(fullname)
-        name = fullname.split
-        doctor = User.where(first_name: name[0], last_name: name[1])
-        output = self.where(department: department_name)
-        return output
-    end
 end
