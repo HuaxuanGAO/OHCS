@@ -1,0 +1,13 @@
+<%= simple_form_for @appointment do |f| %>  
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :slot_id, :value => @slot_id %>
+      <%= f.association :patient, :as => :hidden, :input_html => { :value => current_user.id } %>
+      <%= f.association :doctor, :as => :hidden, :input_html => { :value => @doc_id } %>
+    </div>
+    
+    <div class="form-actions">
+    <%= f.button :submit, class: "create btn btn-primary col-2" %>
+  </div>
+  <br>
+<% end %>

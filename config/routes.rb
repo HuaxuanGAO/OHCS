@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   match '/appointment/doctors', to: 'appointments#select_doctor', via: [:get], as: "select_doctor"
   match '/appointment/calendar', to: 'appointments#select_from_calendar', via: [:get], as: "select_from_calendar"
   match '/appointment/slot', to: 'appointments#select_slot', via: [:get], as: "select_slot"
+  match '/appointment/confirm', to: 'appointments#confirm_slot', via: [:get], as: "confirm_slot"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_scope :user do

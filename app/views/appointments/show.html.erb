@@ -7,22 +7,24 @@
 
 <p>
   <strong>Start time:</strong>
-  <%= @appointment.start_time %>
+  <%=Slot.find(@appointment.slot_id).start_time %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @appointment.end_time %>
+  <%=Slot.find(@appointment.slot_id).end_time %>
 </p>
 
 <p>
   <strong>Patient:</strong>
-  <%= User.find_by(id: @appointment.patient_id).first_name+" "+User.find_by(id: @appointment.patient_id).last_name %>
+  <%# <%= Patient.find_by(id: @appointment.patient_id).first_name+" "+Patient.find_by(id: @appointment.patient_id).last_name %>
+  <%= @appointment.patient.user.first_name + " " + @appointment.patient.user.last_name %>
 </p>
 
 <p>
   <strong>Doctor:</strong>
-  <%= User.find_by(id: @appointment.doctor_id).first_name+" "+User.find_by(id: @appointment.doctor_id).last_name %>
+  <%# <%= Doctor.find_by(id: @appointment.doctor_id).first_name+" "+Doctor.find_by(id: @appointment.doctor_id).last_name %>
+  <%= @appointment.doctor.user.first_name + " " + @appointment.doctor.user.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |

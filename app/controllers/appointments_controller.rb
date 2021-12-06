@@ -90,6 +90,13 @@ class AppointmentsController < ApplicationController
     @doc_id = params[:doc_id]
   end
 
+  def confirm_slot
+    @appointment = Appointment.new
+    @slot_id = params[:slot_id]
+    @doc_id = params[:doctor_id]
+    @patient_id = params[:patient_id]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
@@ -98,6 +105,6 @@ class AppointmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def appointment_params
-      params.require(:appointment).permit(:name, :start_time, :end_time, :patient_id, :doctor_id)
+      params.require(:appointment).permit(:name, :start_time, :end_time, :patient_id, :doctor_id, :slot_id)
     end
 end
