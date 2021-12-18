@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_12_05_183635) do
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
+<<<<<<< HEAD
   create_table "schedules", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
@@ -79,6 +80,8 @@ ActiveRecord::Schema.define(version: 2021_12_05_183635) do
     t.index ["schedule_id"], name: "index_slots_on_schedule_id"
   end
 
+=======
+>>>>>>> main
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -104,6 +107,9 @@ ActiveRecord::Schema.define(version: 2021_12_05_183635) do
   add_foreign_key "appointments", "slots"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+<<<<<<< HEAD
   add_foreign_key "schedules", "doctors"
   add_foreign_key "slots", "schedules"
+=======
+>>>>>>> main
 end

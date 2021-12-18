@@ -131,12 +131,10 @@
       </li>
     <% end %>
   <% end %>
+
 </ul>
 
 <div class="row">
   <%= link_to 'Edit Info', '/users/editinfo', :class => 'btn btn-primary col-2' %>
   <%= link_to 'Change Password or Delete', '/users/edit', :class => 'btn btn-danger col-2' %>
-  <% if @user.role == "doctor" %>
-    <%= link_to 'Set up / modify your schedule', '/schedules', :class => 'btn btn-primary col-2' %>
-  <% end %>
 </div>
