@@ -15,6 +15,12 @@
     <%= f.input :first_name,
               required: true %>
 
+    <%# TODO: move to edit %>
+    <%# <%= if resource_name.to_s.humanize == "Doctor"
+      f.input :department, required: true,
+              collection: ['General outpatient','Internal','Surgery','Neurology',"E.N.T.","Orthopedic"]
+    end %>
+
     <%= f.input :gender,
               collection: ['Female','Male', 'Unavailable'] %>
 

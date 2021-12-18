@@ -1,9 +1,0 @@
-<h1>New Appointment</h1>
-<h2>Step 4: Choose a slot</h2>
-
-<% @slots.each do |slot| %>
-    <%= link_to "#{slot.start_time} - #{slot.end_time}", confirm_slot_url(:doctor_id => @doc_id, :slot_id => slot, :patient_id => current_user), class: "link" %>
-    <br>    
-<% end %>
-
-<%= link_to 'Back', select_department_path %>
