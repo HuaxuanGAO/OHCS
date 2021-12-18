@@ -10,4 +10,10 @@ class Doctor < ApplicationRecord
         end
         return namepairs
     end
+
+    def self.with_department(department_name)
+        output = self.where(department: department_name)
+        return output
+    end
+
 end

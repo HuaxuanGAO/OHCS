@@ -1,0 +1,9 @@
+<h1>New Appointment</h1>
+<h2>Step 2: Choose a doctor from below</h2>
+
+<% @users.each do |user| %>
+    <%= link_to "#{user[0]}", select_from_calendar_path(:doc_id => user[1]), class: "link" %>
+    <br>
+<% end %>
+
+<%= link_to 'Back', select_department_path %>

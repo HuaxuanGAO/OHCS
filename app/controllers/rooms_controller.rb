@@ -12,16 +12,16 @@ class RoomsController < ApplicationController
         @room = Room.new
     end
 
-    # def create
-    #     @room = Room.new permitted_parameters
+    def create
+        @room = Room.new permitted_parameters
 
-    #     if @room.save
-    #     flash[:success] = "Room #{@room.name} was created successfully"
-    #     redirect_to '/dashboard'
-    #     else
-    #     render :new
-    #     end
-    # end
+        if @room.save
+        flash[:success] = "Room #{@room.name} was created successfully"
+        redirect_to "/rooms/#{@room.id}"
+        else
+        render :new
+        end
+    end
 
     def edit
     end
@@ -49,6 +49,6 @@ class RoomsController < ApplicationController
     end
 
     def permitted_parameters
-        params.require(:room).permit(:name)
+        params.require(:room).permit(:name, :appointment_id)
     end
 end

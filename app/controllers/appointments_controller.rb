@@ -4,8 +4,10 @@ class AppointmentsController < ApplicationController
   # GET /appointments or /appointments.json
   def index
     if current_user.role == "patient"
-      @appointments = Appointment.where(patient_id: current_user.id)
+      @patient = Patient.where(user_id: current_user.id)[0]
+      @appointments = Appointment.where(patient_id: @patient.id)
     elsif current_user.role == "doctor"
+      @doctor = Doctor.where(user_id: current_user.id)[0]
       @appointments = Appointment.where(doctor_id: current_user.id)
     end
   end
@@ -64,6 +66,39 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.where(patient_id: current_user.id)
   end
 
+  def select_department
+  end
+
+  def select_doctor
+    department = params[:department]
+    @doctors = Doctor.with_department(department)
+    @users = []
+    @doctors.each do |doc|
+      id = doc.user_id
+      user = User.find(id)
+      name = "#{user.first_name} #{user.last_name}"
+      @users << [name, doc.id]
+    end
+  end
+
+  def select_from_calendar
+    @id = params[:doc_id]
+    @schedules = Schedule.where(doctor_id: @id)
+  end
+
+  def select_slot
+    id = params[:schedule_id]
+    @slots = Slot.where(schedule_id: id)
+    @doc_id = params[:doc_id]
+  end
+
+  def confirm_slot
+    @appointment = Appointment.new
+    @slot_id = params[:slot_id]
+    @doc_id = params[:doctor_id]
+    @patient_id = params[:patient_id]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
@@ -72,6 +107,6 @@ class AppointmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def appointment_params
-      params.require(:appointment).permit(:name, :start_time, :end_time, :patient_id, :doctor_id)
+      params.require(:appointment).permit(:name, :start_time, :end_time, :patient_id, :doctor_id, :slot_id)
     end
 end
