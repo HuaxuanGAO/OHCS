@@ -1,6 +1,7 @@
 require 'rails_helper'
 require 'simplecov'
 SimpleCov.start 'rails'
+require_relative "../support/devise"
 
 RSpec.describe "User", type: :request do
 

@@ -29,6 +29,15 @@ describe UsersController, type: :controller do
       end
     end
   end
+  # describe "patient profile" do
+  #   login_user('patient')
+  #   context "from login user" do
+  #     it "should show patient profile" do
+  #       get :profile
+  #       expect(response).to have_content("Patient Profile")
+  #     end
+  #   end
+  # end
 
   describe "doctor login" do
     login_user('doctor')

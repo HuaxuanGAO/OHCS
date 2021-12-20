@@ -24,14 +24,14 @@ RSpec.describe RoomChannel, type: :channel do
     expect(subscription).to be_rejected    
   end
 
-  it "subscribes " do 
-    FactoryBot.create(:appointment)
-    subscribe(room: 1)
-    expect(subscription).to be_confirmed
+  # it "subscribes " do
+  #   FactoryBot.create(:appointment)
+  #   subscribe(room: 1)
+  #   expect(subscription).to be_confirmed
 
-    # or directly by model if you create streams with `stream_for`
-    expect(subscription).to have_stream_for(Room.find(1))
-  end
+  #   # or directly by model if you create streams with `stream_for`
+  #   expect(subscription).to have_stream_for(Room.find(1))
+  # end
 end
 
 RSpec.describe ApplicationCable::Connection, :type => :channel do
