@@ -2,27 +2,46 @@
 test_patient = {:role => "patient", :email => "user@host.com", :username => "user", 
     :password => "testtest", :first_name => "one", :last_name => "tester", :birthday => "11-11-2000"}
 test_doctor = {:role => "doctor", :email => "doctor@host.com", :username => "doctor", 
-    :password => "testtest", :first_name => "three", :last_name => "tester", :birthday => "11-11-2000"}
-test_appointment = {:name => "App 1", :patient_id => 1, :doctor_id => 1, 
-    :start_time => "2021-11-17 17:37:00", :end_time => "2021-11-17 17:48:00" }
+    :password => "testtest", :first_name => "Test", :last_name => "Doctor", :birthday => "11-11-2000"}
 
-Given('the default patient and doctor exist') do
+Given('the default patient exists') do
     User.create(test_patient)
+end
+
+Given('the default doctor exists') do
     User.create(test_doctor)
 end
 
+When /the doctor is in department "([^"]*)"$/ do |department|
+    visit('/users/sign_in')
+    fill_in('Email', :with => test_doctor[:email])
+    fill_in('Password', :with => test_doctor[:password])
+    click_button('Log in')
+    click_link('Edit Info')
+    select(department, :from => "Department")
+    click_button('Update')
+end
+
 Given('I am on the appointment page') do
-    visit('/appointments')
-    expect(page).to have_content "Appointments"
+    click_button("Appointments")
 end
 
-Given('I am on the new appointment page') do
-    visit('/appointments/new')
-    expect(page).to have_content "New Appointment"
+Given('I have login with the doctor credential') do
+    visit('/users/sign_in')
+    fill_in('Email', :with => test_doctor[:email])
+    fill_in('Password', :with => test_doctor[:password])
+    click_button('Log in')
 end
 
-Then('I should be on the new appointment page') do
-    expect(page).to have_content "New Appointment"
+# patient
+Given('I am on the new appointment page for patient') do
+    visit('/appointment/department')
+    expect(page).to have_content "Step 1"
+end
+
+
+Then('I should be on the new appointment page for patient') do
+    expect(page).to have_content "Step 1"
 end
 
 Given('I fill in new appointment form') do

@@ -33,3 +33,15 @@ Scenario: existing user change password with valid password
   And I fill in "Password confirmation" with "useredit2"
   And I press "Update"
   Then I should see "Patient Profile"
+
+
+Scenario: existing user change basic information
+  Given I have login with the correct credential
+  Then I should be on the profile page
+  And I follow "Edit Info"
+  Then I should see "Med record"
+  And I fill in "user[patient_attributes][med_record]" with "docs.google.com/spreadsheets/d/1y1OY7VpP1VY_O9XHssmUsA0o9UePcjSRmmKpYSEOf1c/edit?usp=sharing"
+  And I press "Update"
+  Then I should see "Patient Profile"
+  And I press "Medical Record"
+  

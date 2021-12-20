@@ -35,6 +35,15 @@ Given('the default test user exist') do
   User.create(test_user)
 end
 
+And('I check others profile') do
+  visit('/users/2/profile')
+end
+
+Then('I should see my own profile') do
+  expect(page).to have_content "one"
+  expect(page).to have_content "tester"
+end
+
 Given('I have login with the correct credential') do
   visit('/users/sign_in')
   fill_in('Email', :with => test_user[:email])
@@ -55,4 +64,5 @@ end
 
 Then('I should see the sign out message') do
   expect(page).to have_content "Signed out successfully"
+  visit('/users')
 end

@@ -3,6 +3,8 @@ class Message < ApplicationRecord
   belongs_to :user
   def as_json(options)
     # TODO: nil instance in test cases
-    super(options).merge(user_avatar_url: User.find(1).gravatar_url)
+    if options
+      super(options).merge(user_avatar_url: User.find(1).gravatar_url)
+    end
   end
 end

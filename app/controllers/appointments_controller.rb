@@ -42,24 +42,26 @@ class AppointmentsController < ApplicationController
 
   # PATCH/PUT /appointments/1 or /appointments/1.json
   def update
-    respond_to do |format|
-      if @appointment.update(appointment_params)
-        format.html { redirect_to @appointment, notice: "Appointment was successfully updated." }
-        format.json { render :show, status: :ok, location: @appointment }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   # name = @appointment.doctor.user.id
+    #   # @appointment.doctor_id = Doctor.where(:user_id=>@appointment.user.id)
+    #   if @appointment.update(appointment_params)
+    #     format.html { redirect_to @appointment, notice: "Appointment was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @appointment }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @appointment.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /appointments/1 or /appointments/1.json
   def destroy
-    @appointment.destroy
-    respond_to do |format|
-      format.html { redirect_to appointments_url, notice: "Appointment was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    # @appointment.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to appointments_url, notice: "Appointment was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   def calendar

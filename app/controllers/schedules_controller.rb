@@ -32,9 +32,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new(schedule_params)
     if user_signed_in?
       @user = current_user
-      if @user.role == "patient" 
-          @patient = Patient.find_by(user_id: @user.id)
-      elsif @user.role == "doctor" 
+      if @user.role == "doctor" 
           @doctor = Doctor.find_by(user_id: @user.id)
       end 
     end
@@ -57,29 +55,29 @@ class SchedulesController < ApplicationController
 
   # PATCH/PUT /schedules/1 or /schedules/1.json
   def update
-    respond_to do |format|
-      if @schedule.update(schedule_params)
-        Slot.where(schedule: @schedule.id).destroy_all
-        start_time = @schedule.start_time
-        end_time = @schedule.end_time
-        slots_array = Slot.new.generate_time_slots(start_time: start_time, end_time: end_time)
-        slots_array.map { |slot_time| Slot.create!(schedule: @schedule, start_time: slot_time[0], end_time: slot_time[1]) }
-        format.html { redirect_to @schedule, notice: "Schedule was successfully updated." }
-        format.json { render :show, status: :ok, location: @schedule }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @schedule.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @schedule.update(schedule_params)
+    #     Slot.where(schedule: @schedule.id).destroy_all
+    #     start_time = @schedule.start_time
+    #     end_time = @schedule.end_time
+    #     slots_array = Slot.new.generate_time_slots(start_time: start_time, end_time: end_time)
+    #     slots_array.map { |slot_time| Slot.create!(schedule: @schedule, start_time: slot_time[0], end_time: slot_time[1]) }
+    #     format.html { redirect_to @schedule, notice: "Schedule was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @schedule }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @schedule.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /schedules/1 or /schedules/1.json
   def destroy
-    @schedule.destroy
-    respond_to do |format|
-      format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    # @schedule.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

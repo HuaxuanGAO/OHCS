@@ -31,3 +31,11 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
     assert page.has_content?(text)
   end
 end
+
+Then /^(?:|I )should not see "([^"]*)"$/ do |text|
+  if page.respond_to? :should_not
+    !page.should_not have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
