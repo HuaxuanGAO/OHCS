@@ -21,9 +21,3 @@ Scenario: should not add new slot to unavailable
     And I am on the slot page
     And I follow "New Slot"
     Then I should see "New Slot"
-    And I input wrong date info
-
-    Then I press "Create Slot"
-    And I input correct date info
-    Then I press "Create Slot"
-    Then I should see "Schedule must exist"
